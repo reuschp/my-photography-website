@@ -7256,6 +7256,13 @@ button.bg-dark:focus {
   align-items: stretch !important;
 }
 
+.flex-image {
+  width: 100%; /* Ensures images fill the width of their column */
+  height: auto; /* Maintain natural height */
+  object-fit: cover; /* Ensures the image doesn’t distort */
+}
+
+
 .align-content-start {
   -ms-flex-line-pack: start !important;
   align-content: flex-start !important;
