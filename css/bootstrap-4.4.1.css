@@ -7130,6 +7130,17 @@ button.bg-dark:focus {
   border: 0;
 }
 
+iframe {
+  width: 100%; /* Makes the iframe take up the full width of its container */
+  height: 80vh; /* Adjust height as needed (80% of viewport height) */
+  border: none; /* Removes default iframe border */
+  display: block; /* Ensures no inline space around the iframe */
+}
+
+.container-fluid {
+  padding: 0; /* Ensures full-width layout with no padding */
+}
+
 .embed-responsive-21by9::before {
   padding-top: 42.857143%;
 }
