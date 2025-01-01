@@ -8,26 +8,11 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
   </head>
-	
-	<script>
-  document.getElementById('fullscreen-btn').addEventListener('click', function () {
-    const iframe = document.getElementById('gallery-frame');
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) { /* Safari */
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { /* IE11 */
-      iframe.msRequestFullscreen();
-    }
-  });
-</script>
-	
-	
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -37,17 +22,15 @@
           <li class="nav-item active">
             <a class="nav-link" href="portraits.html">Portraits <span class="sr-only">(current)</span></a>
           </li>
-			<li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="street.html">Street Photography </a>
           </li>
-
-
         </ul>
-
       </div>
     </nav>
+
     <section>
-      <div class="jumbotron text-center mt-2  py-2">
+      <div class="jumbotron text-center mt-2 py-2">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -58,38 +41,15 @@
       </div>
     </section>
 
-	  <section class="container-fluid p-0">
-  <div class="text-center mb-3">
-    <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
-  </div>
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe id="gallery-frame" class="embed-responsive-item" src="portrait/index.html" frameborder="0"></iframe>
-  </div>
-</section>
-	  
-	  		  <!-- Gallery Section -->
-<section class="container-fluid p-0">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="portrait/index.html" frameborder="0"></iframe>
-  </div>
-</section>
-
-		
-		<hr>
-	  
-
-    <hr>
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h3>“In a portrait, I’m looking for the silence in somebody. That quiet moment that speaks volumes about who they are.” </h3>
-			  <h3>Henri Cartier-Bresson</h3>
-
-          </div>
-        </div>
+    <section class="container-fluid p-0">
+      <div class="text-center mb-3">
+        <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
+      </div>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe id="gallery-frame" class="embed-responsive-item" src="portrait/index.html" frameborder="0"></iframe>
       </div>
     </section>
+
     <hr>
     <footer class="text-center">
       <div class="container">
@@ -100,9 +60,23 @@
         </div>
       </div>
     </footer>
+
+    <!-- JavaScript for Fullscreen Button -->
+    <script>
+      document.getElementById('fullscreen-btn').addEventListener('click', function () {
+        const iframe = document.getElementById('gallery-frame');
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) { /* Safari */
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { /* IE11 */
+          iframe.msRequestFullscreen();
+        }
+      });
+    </script>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
   </body>
