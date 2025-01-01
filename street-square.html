@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pascal Reusch Photography</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    /* Fullscreen button styling */
+    .btn-fullscreen {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-fullscreen:hover {
+      background-color: #555;
+    }
+
+    /* Custom Embed Responsive */
+    .custom-embed {
+      position: relative;
+      width: 100%;
+      height: 70vh; /* Default height */
+      overflow: hidden;
+    }
+
+    .custom-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (orientation: portrait) {
+      .custom-embed {
+        height: 100vh; /* Increased height in portrait mode */
+      }
+    }
+
+    @media (orientation: landscape) {
+      .custom-embed {
+        height: 60vh; /* Default height in landscape mode */
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="portraits.html">Portraits</a></li>
+        <li class="nav-item active"><a class="nav-link" href="street.html">Street Photography <span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section>
+    <div class="jumbotron text-center mt-2 py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>Street Photography</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fullscreen Button -->
+  <div class="text-center">
+    <button id="fullscreen-btn" class="btn-fullscreen">View Fullscreen</button>
+  </div>
+
+  <!-- Gallery Section -->
+  <section class="container-fluid p-0">
+    <div class="custom-embed">
+      <iframe id="gallery-frame" src="street-track/index.html"></iframe>
+    </div>
+  </section>
+
+  <script>
+    // Fullscreen logic
+    document.getElementById("fullscreen-btn").addEventListener("click", function () {
+      const iframe = document.getElementById("gallery-frame");
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) { // Safari
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE
+        iframe.msRequestFullscreen();
+      } else {
+        alert("Fullscreen mode is not supported in this browser.");
+      }
+    });
+
+    // Fix for Lightroom gallery layout
+    document.getElementById("gallery-frame").addEventListener("load", function () {
+      const iframe = document.getElementById("gallery-frame");
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+      // Inject custom styles to adjust layout
+      const style = document.createElement("style");
+      style.textContent = `
+        /* Remove unnecessary padding and margins */
+        body {
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow-x: hidden !important; /* Prevent horizontal scroll */
+        }
+
+        #thumbnailContainer {
+          padding: 0 !important;
+          margin: 0 auto !important; /* Center thumbnails */
+          max-width: 100% !important;
+        }
+
+        div.thumbnails {
+          margin: 0 !important;
+          text-align: center !important;
+        }
+
+        div.thumbnail {
+          display: inline-block;
+          margin: 5px !important;
+        }
+
+        @media (max-width: 768px) {
+          #thumbnailContainer {
+            padding: 0 !important;
+          }
+        }
+
+
+      `;
+      iframeDoc.head.appendChild(style);
+    });
+  </script>
+
+  <footer class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>Copyright © Pascal Reusch. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+</body>
+</html>
