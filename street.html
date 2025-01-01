@@ -14,14 +14,14 @@
             border: none;
         }
 
-        /* Mobile adjustments */
-        @media (max-width: 480px) {
+        /* Larger iframe height for mobile portrait */
+        @media (max-width: 768px) {
             iframe {
-                height: 85vh; /* Larger height for smaller devices */
+                height: 85vh;
             }
         }
 
-        /* Fullscreen mode styles */
+        /* Fullscreen mode: Hide header and button, and maximize iframe */
         .fullscreen-mode .jumbotron,
         .fullscreen-mode #fullscreen-btn {
             display: none;
@@ -32,7 +32,7 @@
             width: 100vw !important;
         }
 
-        /* Fix left margin issue for smaller screens */
+        /* Fix margins and padding issues for the iframe */
         #gallery-frame {
             margin: 0 !important;
             padding: 0 !important;
@@ -134,6 +134,11 @@
             if (!document.fullscreenElement) {
                 body.classList.remove("fullscreen-mode");
             }
+        });
+
+        // Restore navigation menu and header after exiting loupe/fullscreen mode
+        document.addEventListener("fullscreenerror", () => {
+            body.classList.remove("fullscreen-mode");
         });
     </script>
 </body>
