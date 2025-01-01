@@ -21,7 +21,8 @@
     .btn-fullscreen:hover {
       background-color: #555;
     }
-	 /* Custom Embed Responsive */
+
+    /* Custom Embed Responsive */
     .custom-embed {
       position: relative;
       width: 100%;
@@ -85,8 +86,8 @@
 
   <!-- Gallery Section -->
   <section class="container-fluid p-0">
-    <div class="embed-responsive embed-responsive-16by9">
-     <iframe id="gallery-frame" src="street-track/index.html"></iframe>
+    <div class="custom-embed">
+      <iframe id="gallery-frame" src="street-track/index.html"></iframe>
     </div>
   </section>
 
@@ -177,6 +178,7 @@
       iframeDoc.head.appendChild(style);
     });
   </script>
+
   <footer class="text-center">
     <div class="container">
       <div class="row">
