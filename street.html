@@ -105,41 +105,61 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        const fullscreenButton = document.getElementById("fullscreen-btn");
-        const galleryFrame = document.getElementById("gallery-frame");
-        const body = document.body;
+  <script>
+    // Fullscreen logic
+    document.getElementById("fullscreen-btn").addEventListener("click", function () {
+      const iframe = document.getElementById("gallery-frame");
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) { // Safari
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE
+        iframe.msRequestFullscreen();
+      } else {
+        alert("Fullscreen mode is not supported in this browser.");
+      }
+    });
 
-        // Fullscreen mode toggle
-        fullscreenButton.addEventListener("click", () => {
-            if (galleryFrame.requestFullscreen) {
-                galleryFrame.requestFullscreen();
-            } else if (galleryFrame.webkitRequestFullscreen) { /* Safari */
-                galleryFrame.webkitRequestFullscreen();
-            } else if (galleryFrame.msRequestFullscreen) { /* IE11 */
-                galleryFrame.msRequestFullscreen();
-            } else {
-                // Fallback to in-browser fullscreen-like mode
-                if (!body.classList.contains("fullscreen-mode")) {
-                    body.classList.add("fullscreen-mode");
-                } else {
-                    body.classList.remove("fullscreen-mode");
-                }
-            }
-        });
+    // Fix for Lightroom gallery layout
+    document.getElementById("gallery-frame").addEventListener("load", function () {
+      const iframe = document.getElementById("gallery-frame");
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-        // Exit fullscreen mode if the user exits it manually
-        document.addEventListener("fullscreenchange", () => {
-            if (!document.fullscreenElement) {
-                body.classList.remove("fullscreen-mode");
-            }
-        });
+      // Inject custom styles to adjust layout
+      const style = document.createElement("style");
+      style.textContent = `
+        /* Remove unnecessary padding and margins */
+        body {
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow-x: hidden !important; /* Prevent horizontal scroll */
+        }
 
-        // Restore navigation menu and header after exiting loupe/fullscreen mode
-        document.addEventListener("fullscreenerror", () => {
-            body.classList.remove("fullscreen-mode");
-        });
-    </script>
+        #thumbnailContainer {
+          padding: 0 !important;
+          margin: 0 auto !important; /* Center thumbnails */
+          max-width: 100% !important;
+        }
+
+        div.thumbnail {
+          display: inline-block;
+          margin: 5px;
+        }
+
+        @media (max-width: 768px) {
+          #thumbnailContainer {
+            padding: 0 !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          #thumbnailContainer {
+            padding: 0 !important;
+          }
+        }
+      `;
+      iframeDoc.head.appendChild(style);
+    });
+  </script>
 </body>
 </html>
