@@ -102,58 +102,56 @@
       </div>
     </footer>
 
-    <!-- JavaScript for Interaction Fixes -->
-    <script>
-      document.getElementById("gallery-frame").addEventListener("load", function () {
-        const iframe = document.getElementById("gallery-frame");
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+<script>
+  document.getElementById("gallery-frame").addEventListener("load", function () {
+    const iframe = document.getElementById("gallery-frame");
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-        // Inject custom CSS for touch and layout fixes
-        const style = document.createElement("style");
-        style.textContent = `
-          body {
-            margin: 0;
-            padding: 0;
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            touch-action: manipulation; /* Enable touch interactions */
-          }
-          #thumbnailContainer {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
-            gap: 10px; /* Spacing between thumbnails */
-            padding: 20px;
-          }
-          .thumbnail {
-            width: 100%;
-            height: auto;
-          }
-          img {
-            max-width: 100%;
-            height: auto;
-          }
-          @media screen and (max-width: 768px) {
-            #thumbnailContainer {
-              grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller thumbnails */
-            }
-          }
-          @media screen and (max-width: 480px) {
-            #thumbnailContainer {
-              grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Very small thumbnails */
-            }
-          }
-        `;
-        iframeDoc.head.appendChild(style);
-      });
+    // Inject CSS for responsiveness
+    const style = document.createElement("style");
+    style.textContent = `
+      body {
+        margin: 0;
+        padding: 0;
+        -webkit-overflow-scrolling: touch;
+      }
+      #thumbnailContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0; /* Remove padding */
+      }
+      .thumbnail {
+        flex: 0 1 calc(25% - 10px); /* 4 per row by default */
+        max-width: calc(25% - 10px);
+      }
+      @media screen and (max-width: 768px) {
+        #thumbnailContainer {
+          gap: 5px; /* Reduce gap */
+        }
+        .thumbnail {
+          flex: 0 1 calc(33.333% - 5px); /* 3 per row on tablets */
+        }
+      }
+      @media screen and (max-width: 480px) {
+        #thumbnailContainer {
+          padding: 0; /* Ensure no horizontal overflow */
+        }
+        .thumbnail {
+          flex: 0 1 calc(50% - 5px); /* 2 per row on phones */
+        }
+      }
+    `;
+    iframeDoc.head.appendChild(style);
 
-      // Reload iframe on orientation change
-      window.addEventListener("orientationchange", function () {
-        const iframe = document.getElementById("gallery-frame");
-        iframe.src = iframe.src;
-      });
-    </script>
-
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-4.4.1.js"></script>
+    // Ensure no horizontal overflow
+    iframeDoc.body.style.margin = "0";
+    iframeDoc.body.style.padding = "0";
+    iframeDoc.body.style.overflowX = "hidden";
+  });
+</script>
+	  
+	  
   </body>
 </html>
