@@ -10,6 +10,7 @@
     <style>
       .gallery-wrapper {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 20px;
@@ -34,6 +35,10 @@
         iframe#gallery-frame {
           height: 60vh;
         }
+      }
+
+      #fullscreen-btn {
+        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -71,6 +76,9 @@
     </section>
 
     <section class="gallery-wrapper">
+      <!-- Fullscreen Button -->
+      <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
+      <!-- Gallery iframe -->
       <iframe id="gallery-frame" src="street/index.html" frameborder="0" allowfullscreen></iframe>
     </section>
 
@@ -99,8 +107,29 @@
       </div>
     </footer>
 
-    <!-- JavaScript for Custom Adjustments -->
+    <!-- JavaScript for Fullscreen and Interaction Fixes -->
     <script>
+      // Fullscreen button functionality
+      document.getElementById("fullscreen-btn").addEventListener("click", function () {
+        const iframe = document.getElementById("gallery-frame");
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) { /* Safari */
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { /* IE11 */
+          iframe.msRequestFullscreen();
+        } else {
+          alert("Fullscreen mode is not supported in this browser.");
+        }
+      });
+
+      // Reload iframe on orientation change
+      window.addEventListener("orientationchange", function () {
+        const iframe = document.getElementById("gallery-frame");
+        iframe.src = iframe.src;
+      });
+
+      // Inject custom CSS into the iframe for interaction and layout fixes
       document.getElementById("gallery-frame").addEventListener("load", function () {
         const iframe = document.getElementById("gallery-frame");
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
@@ -111,17 +140,35 @@
           body {
             margin: 0;
             padding: 0;
-            -webkit-overflow-scrolling: touch;
-            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            touch-action: manipulation; /* Enable touch interactions */
+          }
+          #thumbnailContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+            gap: 10px; /* Spacing between thumbnails */
+            padding: 20px;
+          }
+          .thumbnail {
+            width: 100%;
+            height: auto;
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+          @media screen and (max-width: 768px) {
+            #thumbnailContainer {
+              grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller thumbnails */
+            }
+          }
+          @media screen and (max-width: 480px) {
+            #thumbnailContainer {
+              grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Very small thumbnails */
+            }
           }
         `;
         iframeDoc.head.appendChild(style);
-      });
-
-      // Reload iframe on orientation change
-      window.addEventListener("orientationchange", function () {
-        const iframe = document.getElementById("gallery-frame");
-        iframe.src = iframe.src;
       });
     </script>
 
