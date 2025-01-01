@@ -111,18 +111,37 @@
       const iframe = document.getElementById("gallery-frame");
       const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-      // Inject custom styles to remove left margin and padding
+      // Inject custom styles to adjust layout
       const style = document.createElement("style");
       style.textContent = `
-        #thumbnailContainer {
-          padding: 0 !important;
-          margin: 0 auto !important; /* Center content */
-          max-width: 100% !important;
-        }
+        /* Remove unnecessary padding and margins */
         body {
           margin: 0 !important;
           padding: 0 !important;
           overflow-x: hidden !important; /* Prevent horizontal scroll */
+        }
+
+        #thumbnailContainer {
+          padding: 0 !important;
+          margin: 0 auto !important; /* Center thumbnails */
+          max-width: 100% !important;
+        }
+
+        div.thumbnail {
+          display: inline-block;
+          margin: 5px;
+        }
+
+        @media (max-width: 768px) {
+          #thumbnailContainer {
+            padding: 0 !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          #thumbnailContainer {
+            padding: 0 !important;
+          }
         }
       `;
       iframeDoc.head.appendChild(style);
