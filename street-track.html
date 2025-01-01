@@ -21,6 +21,34 @@
     .btn-fullscreen:hover {
       background-color: #555;
     }
+	 /* Custom Embed Responsive */
+    .custom-embed {
+      position: relative;
+      width: 100%;
+      height: 70vh; /* Default height */
+      overflow: hidden;
+    }
+
+    .custom-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (orientation: portrait) {
+      .custom-embed {
+        height: 80vh; /* Increased height in portrait mode */
+      }
+    }
+
+    @media (orientation: landscape) {
+      .custom-embed {
+        height: 60vh; /* Default height in landscape mode */
+      }
+    }
   </style>
 </head>
 <body>
