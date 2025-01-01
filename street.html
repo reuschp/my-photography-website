@@ -143,11 +143,23 @@
           }
         }
 
-        @media (max-width: 480px) {
-          #thumbnailContainer {
-            padding: 0 !important;
-          }
-        }
+	@media (max-width: 480px) {
+	  #thumbnailContainer {
+		padding: 0 !important;
+		margin: 0 auto !important; /* Center-align and remove side margins */
+		width: 100% !important;   /* Force full width */
+	  }
+
+	  div.thumbnails {
+		margin: 0 !important;
+		text-align: center !important;
+	  }
+
+	  div.thumbnail {
+		display: inline-block;
+		margin: 5px !important; /* Adjust spacing as needed */
+	  }
+	}
       `;
       iframeDoc.head.appendChild(style);
     });
