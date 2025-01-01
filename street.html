@@ -46,7 +46,7 @@
         <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
       </div>
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe id="gallery-frame" class="embed-responsive-item" src="street/index.html" frameborder="0"></iframe>
+        <iframe id="gallery-frame" class="embed-responsive-item" src="street/index.html" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -75,17 +75,10 @@
       </div>
     </footer>
 
-    <!-- JavaScript for Fullscreen Button -->
+    <!-- Redirect to Fullscreen Page -->
     <script>
       document.getElementById('fullscreen-btn').addEventListener('click', function () {
-        const iframe = document.getElementById('gallery-frame');
-        if (iframe.requestFullscreen) {
-          iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) { /* Safari */
-          iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) { /* IE11 */
-          iframe.msRequestFullscreen();
-        }
+        window.location.href = "street/index.html";
       });
     </script>
 
