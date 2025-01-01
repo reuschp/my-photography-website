@@ -160,6 +160,23 @@
 		margin: 5px !important; /* Adjust spacing as needed */
 	  }
 	}
+
+
+@media (max-width: 480px) {
+  #loupeContainer {
+    padding: 0 !important; /* Remove all padding on small screens */
+  }
+
+  #loupeContainer div.image-container {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  #loupeContainer div.image-container div.image {
+    width: auto !important; /* Allow image to scale properly */
+    height: auto !important;
+  }
+}
       `;
       iframeDoc.head.appendChild(style);
     });
