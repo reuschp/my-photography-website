@@ -23,6 +23,7 @@
         height: 80vh; /* Dynamic height for better scaling */
         border: none;
         display: block;
+        overflow: hidden; /* Prevents unnecessary scrolling */
       }
 
       @media screen and (orientation: landscape) {
@@ -35,10 +36,6 @@
         iframe#gallery-frame {
           height: 60vh;
         }
-      }
-
-      #fullscreen-btn {
-        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -76,8 +73,6 @@
     </section>
 
     <section class="gallery-wrapper">
-      <!-- Fullscreen Button -->
-      <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
       <!-- Gallery iframe -->
       <iframe id="gallery-frame" src="street/index.html" frameborder="0" allowfullscreen></iframe>
     </section>
@@ -107,34 +102,13 @@
       </div>
     </footer>
 
-    <!-- JavaScript for Fullscreen and Interaction Fixes -->
+    <!-- JavaScript for Interaction Fixes -->
     <script>
-      // Fullscreen button functionality
-      document.getElementById("fullscreen-btn").addEventListener("click", function () {
-        const iframe = document.getElementById("gallery-frame");
-        if (iframe.requestFullscreen) {
-          iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) { /* Safari */
-          iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) { /* IE11 */
-          iframe.msRequestFullscreen();
-        } else {
-          alert("Fullscreen mode is not supported in this browser.");
-        }
-      });
-
-      // Reload iframe on orientation change
-      window.addEventListener("orientationchange", function () {
-        const iframe = document.getElementById("gallery-frame");
-        iframe.src = iframe.src;
-      });
-
-      // Inject custom CSS into the iframe for interaction and layout fixes
       document.getElementById("gallery-frame").addEventListener("load", function () {
         const iframe = document.getElementById("gallery-frame");
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-        // Inject custom CSS for enabling touch interactions
+        // Inject custom CSS for touch and layout fixes
         const style = document.createElement("style");
         style.textContent = `
           body {
@@ -169,6 +143,12 @@
           }
         `;
         iframeDoc.head.appendChild(style);
+      });
+
+      // Reload iframe on orientation change
+      window.addEventListener("orientationchange", function () {
+        const iframe = document.getElementById("gallery-frame");
+        iframe.src = iframe.src;
       });
     </script>
 
