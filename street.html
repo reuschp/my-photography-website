@@ -106,9 +106,26 @@
       }
     });
 
-    // Ensuring iframe loads properly
+    // Fix for Lightroom gallery layout
     document.getElementById("gallery-frame").addEventListener("load", function () {
-      console.log("Gallery iframe loaded successfully.");
+      const iframe = document.getElementById("gallery-frame");
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+      // Inject custom styles to remove left margin and padding
+      const style = document.createElement("style");
+      style.textContent = `
+        #thumbnailContainer {
+          padding: 0 !important;
+          margin: 0 auto !important; /* Center content */
+          max-width: 100% !important;
+        }
+        body {
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow-x: hidden !important; /* Prevent horizontal scroll */
+        }
+      `;
+      iframeDoc.head.appendChild(style);
     });
   </script>
 
