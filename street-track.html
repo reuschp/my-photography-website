@@ -41,7 +41,7 @@
 
     @media (orientation: portrait) {
       .custom-embed {
-        height: 80vh; /* Increased height in portrait mode */
+        height: 100vh; /* Increased height in portrait mode */
       }
     }
 
@@ -144,36 +144,6 @@
         }
 
 
-@media (max-width: 480px) {
-  #thumbnailContainer {
-    padding: 0 !important;
-    margin: 0 auto !important; /* Center-align and remove side margins */
-    width: 100% !important;   /* Force full width */
-  }
-
-  div.thumbnails {
-    margin: 0 !important;
-    text-align: center !important;
-  }
-
-  div.thumbnail {
-    display: inline-block;
-    margin: 5px !important; /* Adjust spacing as needed */
-  }
-  #loupeContainer {
-    padding: 0 !important; /* Remove all padding on small screens */
-  }
-
-  #loupeContainer div.image-container {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  #loupeContainer div.image-container div.image {
-    width: auto !important; /* Allow image to scale properly */
-    height: auto !important;
-  }
-}
       `;
       iframeDoc.head.appendChild(style);
     });
