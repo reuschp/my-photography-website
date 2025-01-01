@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap-4.4.1.css">
     <title>Pascal Reusch Photography</title>
+    <link rel="stylesheet" href="css/bootstrap-4.4.1.css">
     <style>
         /* General iframe styles */
         iframe {
@@ -14,22 +14,28 @@
             border: none;
         }
 
+        /* Mobile adjustments */
         @media (max-width: 480px) {
             iframe {
                 height: 85vh; /* Larger height for smaller devices */
             }
         }
 
-        /* Hide header and button when fullscreen */
+        /* Fullscreen mode styles */
         .fullscreen-mode .jumbotron,
         .fullscreen-mode #fullscreen-btn {
             display: none;
         }
 
-        /* Expand iframe when fullscreen */
         .fullscreen-mode iframe {
             height: 100vh !important;
             width: 100vw !important;
+        }
+
+        /* Fix left margin issue for smaller screens */
+        #gallery-frame {
+            margin: 0 !important;
+            padding: 0 !important;
         }
     </style>
 </head>
@@ -102,12 +108,30 @@
     <!-- JavaScript -->
     <script>
         const fullscreenButton = document.getElementById("fullscreen-btn");
+        const galleryFrame = document.getElementById("gallery-frame");
         const body = document.body;
 
+        // Fullscreen mode toggle
         fullscreenButton.addEventListener("click", () => {
-            if (!body.classList.contains("fullscreen-mode")) {
-                body.classList.add("fullscreen-mode");
+            if (galleryFrame.requestFullscreen) {
+                galleryFrame.requestFullscreen();
+            } else if (galleryFrame.webkitRequestFullscreen) { /* Safari */
+                galleryFrame.webkitRequestFullscreen();
+            } else if (galleryFrame.msRequestFullscreen) { /* IE11 */
+                galleryFrame.msRequestFullscreen();
             } else {
+                // Fallback to in-browser fullscreen-like mode
+                if (!body.classList.contains("fullscreen-mode")) {
+                    body.classList.add("fullscreen-mode");
+                } else {
+                    body.classList.remove("fullscreen-mode");
+                }
+            }
+        });
+
+        // Exit fullscreen mode if the user exits it manually
+        document.addEventListener("fullscreenchange", () => {
+            if (!document.fullscreenElement) {
                 body.classList.remove("fullscreen-mode");
             }
         });
