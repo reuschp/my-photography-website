@@ -14,7 +14,7 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
-        background-color: #f8f9fa; /* Light gray background for better contrast */
+        background-color: #f8f9fa; /* Light gray background */
       }
 
       /* Responsive styling for the iframe */
@@ -26,7 +26,7 @@
       }
 
       /* Adjust height for smaller screens */
-      @media screen and (max-width: 768px) {
+      @media screen and (orientation: landscape) {
         iframe#gallery-frame {
           height: 70vh;
         }
@@ -111,17 +111,33 @@
         const style = document.createElement("style");
         style.textContent = `
           body {
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: auto;
           }
-          div.thumbnail {
-            max-width: 120px; /* Adjust thumbnail sizes */
+          #thumbnailContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+            gap: 10px; /* Spacing between thumbnails */
+            padding: 20px;
+          }
+          .thumbnail {
+            width: 100%;
             height: auto;
-            margin: 5px auto;
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+          @media screen and (max-width: 768px) {
+            #thumbnailContainer {
+              grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
           }
           @media screen and (max-width: 480px) {
-            div.thumbnail {
-              max-width: 80px; /* Further adjust thumbnails for small screens */
+            #thumbnailContainer {
+              grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
             }
           }
         `;
@@ -129,7 +145,6 @@
       });
     </script>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
