@@ -20,17 +20,15 @@
             <a class="nav-link" href="index.html">Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sortraits.html">Portraits </a>
+            <a class="nav-link" href="portraits.html">Portraits </a>
           </li>
-			<li class="nav-item active">
+          <li class="nav-item active">
             <a class="nav-link" href="street.html">Street Photography <span class="sr-only">(current)</span></a>
           </li>
-
-
         </ul>
-
       </div>
     </nav>
+
     <section>
       <div class="jumbotron text-center mt-2 py-2">
         <div class="container">
@@ -43,31 +41,30 @@
       </div>
     </section>
 
-	  	  		  <!-- Gallery Section -->
-<section class="container-fluid p-0">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="street/index.html" frameborder="0"></iframe>
-  </div>
-</section>
-		
-		<hr>
-	  
-	 
+    <section class="container-fluid p-0">
+      <div class="text-center mb-3">
+        <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
+      </div>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe id="gallery-frame" class="embed-responsive-item" src="street/index.html" frameborder="0"></iframe>
+      </div>
+    </section>
 
     <hr>
+
     <section>
       <div class="container">
         <div class="row">
           <div class="col-12 text-center">
             <h3>“To me, photography is an art of observation. It’s about finding something interesting in an ordinary place…I’ve found it has little to do with the things you see and everything to do with the way you see them.”</h3>
-			  <h3>Elliott Erwitt</h3>
+            <h3>Elliott Erwitt</h3>
           </div>
         </div>
       </div>
     </section>
+
     <hr>
-    
-    <hr>
+
     <footer class="text-center">
       <div class="container">
         <div class="row">
@@ -77,9 +74,23 @@
         </div>
       </div>
     </footer>
+
+    <!-- JavaScript for Fullscreen Button -->
+    <script>
+      document.getElementById('fullscreen-btn').addEventListener('click', function () {
+        const iframe = document.getElementById('gallery-frame');
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) { /* Safari */
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { /* IE11 */
+          iframe.msRequestFullscreen();
+        }
+      });
+    </script>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
   </body>
