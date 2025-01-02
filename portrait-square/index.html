@@ -14,44 +14,8 @@
         <link rel="stylesheet" type="text/css" media="screen" title="Custom Settings" href="assets/css/custom.css" >
         <script src="assets/js/libs/modernizr.custom.23122.js"></script>
     </head>
-    <body class="has-header" data-pagination-style="scroll">
-                        <header class="">
-            <div class="background"></div>
-            <div class="meta-left">
-                <p id="galleryTitle" class="title">Lightroom Gallery</p>
-                                <p id="galleryAuthor" class="author"></p>
-                            </div>
-            <div class="meta-right">
-                <p class="extra" id="galleryExtra"></p>
-            </div>
-            <div id="buttonFullscreen" title="Fullscreen Mode">
-                <div class="icon">
-                    <svg version="1.1" id="svgIconFullscreen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 16" style="enable-background:new 0 0 18 16;" xml:space="preserve">
-                    <g>
-                        <path class="custom-colorable" d="M5.3871,9.95599C5.19136,9.76858,4.99176,9.85763,4.79376,10.0472l-2.86173,2.74138v-1.55466
-                            c0-0.25257-0.21387-0.45733-0.47767-0.45733H0.47767C0.21387,10.7766,0,10.98136,0,11.23393v3.37367v0.93511
-                            C0,15.79524,0.21387,16,0.47767,16h0.97668h3.5238c0.26377,0,0.47764-0.20476,0.47764-0.45729v-0.93511
-                            c0-0.25254-0.21387-0.45733-0.47764-0.45733H3.34554l2.86694-2.7451c0.198-0.18957,0.30914-0.44923,0.11342-0.63664L5.3871,9.95599
-                            z"/>
-                        <path class="custom-colorable" d="M17.52233,10.7766h-0.97672c-0.26377,0-0.47764,0.20476-0.47764,0.45733v1.55466l-2.86172-2.74138
-                            c-0.198-0.18957-0.39764-0.27862-0.59335-0.09121l-0.93879,0.81254c-0.19575,0.18741-0.08458,0.44707,0.11342,0.63664
-                            l2.8669,2.7451h-1.63258c-0.26377,0-0.47764,0.20479-0.47764,0.45733v0.93511c0,0.25254,0.21387,0.45729,0.47764,0.45729h3.52376
-                            h0.97672C17.7861,16,18,15.79524,18,15.54271v-0.93511v-3.37367C18,10.98136,17.7861,10.7766,17.52233,10.7766z"/>
-                        <path class="custom-colorable" d="M3.34554,1.84973h1.63262c0.26377,0,0.47764-0.20479,0.47764-0.45733V0.45733C5.45579,0.20476,5.24193,0,4.97815,0h-3.5238
-                            H0.47767C0.21387,0,0,0.20476,0,0.45733v0.93508v3.3737C0,5.01864,0.21387,5.2234,0.47767,5.2234h0.97668
-                            c0.26381,0,0.47767-0.20476,0.47767-0.45729V3.21142L4.79376,5.9528c0.198,0.18957,0.3976,0.27862,0.59335,0.09121l0.93879-0.81254
-                            C6.52161,5.04409,6.41048,4.7844,6.21247,4.59483L3.34554,1.84973z"/>
-                        <path class="custom-colorable" d="M17.52233,0h-0.97672h-3.52376c-0.26377,0-0.47764,0.20476-0.47764,0.45733v0.93508
-                            c0,0.25254,0.21387,0.45733,0.47764,0.45733h1.63258l-2.8669,2.7451c-0.19801,0.18957-0.30917,0.44926-0.11342,0.63663
-                            l0.93879,0.81254c0.19571,0.18741,0.39535,0.09836,0.59335-0.09121l2.86172-2.74138V4.7661
-                            c0,0.25254,0.21387,0.45729,0.47764,0.45729h0.97672C17.7861,5.2234,18,5.01864,18,4.7661v-3.3737V0.45733
-                            C18,0.20476,17.7861,0,17.52233,0z"/>
-                    </g>
-                    </svg>
-                </div>
-            </div>
-        </header>
-                <div id="thumbnailContainer">
+    <body class="" data-pagination-style="scroll">
+                        <div id="thumbnailContainer">
             <div class="thumbnails thumbnail-size-md"></div>
         </div>
         <div id="loupeContainer" class="show-corners">
@@ -114,6 +78,7 @@
             var LR = LR || {};
             LR.images = [                                                                                        {"id": "18272396", "exportFilename": "DSC02976", "title": "A fancy man (London, UK)", "caption" : ""},
                          {"id": "21050208", "exportFilename": "DSC08030", "title": "Willie (Mono Lake, CA)", "caption" : ""},
+                         {"id": "21160677", "exportFilename": "DSC09248", "title": "A nice guy (San Francisco, CA)", "caption" : ""},
                          {"id": "21192157", "exportFilename": "DSC09983", "title": "The chef at the &quot;Food for Thought&quot;, Florida Keys", "caption" : ""},
                          {"id": "21192290", "exportFilename": "DSC00117", "title": "Amen (Florida Keys)", "caption" : ""},
                          {"id": "21192469", "exportFilename": "DSC00296", "title": "Focus (Marco Island, FL)", "caption" : ""},
@@ -127,10 +92,13 @@
                          {"id": "26176274", "exportFilename": "DSC03133", "title": "Get dead", "caption" : ""},
                          {"id": "28235269", "exportFilename": "IMG_7408", "title": "The captain (Bahamas)", "caption" : ""},
                          {"id": "28661335", "exportFilename": "DSC08324", "title": "A monk (Haikou, CN)", "caption" : ""},
+                         {"id": "28719747", "exportFilename": "DSC08924", "title": "The little emperor (Sanya, CN)", "caption" : ""},
                          {"id": "28838811", "exportFilename": "DSC09001", "title": "A restaurant owner (Lingshui, CN)", "caption" : ""},
                          {"id": "31414120", "exportFilename": "DSC01441", "title": "", "caption" : ""},
                          {"id": "33677888", "exportFilename": "DSC02575", "title": "A poser posing", "caption" : ""},
                          {"id": "33677893", "exportFilename": "DSC02580", "title": "Lost in Thought, Found in Sound", "caption" : ""},
+                         {"id": "33678171", "exportFilename": "DSC02858", "title": "", "caption" : ""},
+                         {"id": "33678204", "exportFilename": "DSC02891", "title": "Tell me!", "caption" : ""},
                          {"id": "33678248", "exportFilename": "DSC02935", "title": "A Hungarian homeless man", "caption" : ""},
                                     ]        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

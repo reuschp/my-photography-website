@@ -1,5 +1,5 @@
 html {
-  background-color: #000000 !important;
+  background-color: #FFFFFF !important;
   color: inherit;
 }
 
@@ -7,20 +7,20 @@ html {
 }
 
 #loupeContainer div.background {
-  background-color: #000000 !important;
+  background-color: #FFFFFF !important;
   color: inherit;
 }
 
 header div.background {
-  background-color: #000000 !important;
+  background-color: #FFFFFF !important;
   color: inherit;
 }
 
 .custom-colorable {
-  fill: #A0A0A0 !important;
+  fill: #545454 !important;
 }
 
 body {
-  background-color: #000000 !important;
-  color: #828282 !important;
+  background-color: #FFFFFF !important;
+  color: #545454 !important;
 }
