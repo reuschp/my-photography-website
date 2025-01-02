@@ -6,51 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pascal Reusch Photography</title>
   <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-  <style>
-    /* Fullscreen button styling */
-    .btn-fullscreen {
-      display: block;
-      margin: 10px auto;
-      padding: 10px 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .btn-fullscreen:hover {
-      background-color: #555;
-    }
-
-    /* Custom Embed Responsive */
-    .custom-embed {
-      position: relative;
-      width: 100%;
-      height: 70vh; /* Default height */
-      overflow: hidden;
-    }
-
-    .custom-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    @media (orientation: portrait) {
-      .custom-embed {
-        height: 100vh; /* Increased height in portrait mode */
+   <style>
+      /* Responsive container for the gallery */
+      .gallery-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* Default 16:9 aspect ratio */
+        overflow: hidden;
+        background-color: lightblue; /* Debugging */
       }
-    }
-
-    @media (orientation: landscape) {
-      .custom-embed {
-        height: 60vh; /* Default height in landscape mode */
+      .gallery-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
-    }
-  </style>
+      /* Adjust aspect ratio for portrait mode */
+      @media (orientation: portrait) {
+        .gallery-container {
+          padding-top: 133.33%; /* 3:4 Aspect Ratio */
+          background-color: lightgreen; /* Debugging for portrait mode */
+        }
+      }
+    </style>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -97,17 +77,15 @@
     </div>
   </section>
 
-  <!-- Fullscreen Button -->
-  <div class="text-center">
-    <button id="fullscreen-btn" class="btn-fullscreen">View Fullscreen</button>
-  </div>
+    <section class="container-fluid p-0">
+      <div class="text-center mb-3">
+        <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
+      </div>
+      <div class="gallery-container">
+        <iframe id="gallery-frame" src="street-square/index.html" frameborder="0"></iframe>
+      </div>
+    </section>
 
-  <!-- Gallery Section -->
-  <section class="container-fluid p-0">
-    <div class="custom-embed">
-      <iframe id="gallery-frame" src="street-square/index.html"></iframe>
-    </div>
-  </section>
 
   <script>
     // Fullscreen logic
@@ -124,47 +102,6 @@
       }
     });
 
-    // Fix for Lightroom gallery layout
-    document.getElementById("gallery-frame").addEventListener("load", function () {
-      const iframe = document.getElementById("gallery-frame");
-      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-      // Inject custom styles to adjust layout
-      const style = document.createElement("style");
-      style.textContent = `
-        /* Remove unnecessary padding and margins */
-        body {
-          margin: 0 !important;
-          padding: 0 !important;
-          overflow-x: hidden !important; /* Prevent horizontal scroll */
-        }
-
-        #thumbnailContainer {
-          padding: 0 !important;
-          margin: 0 auto !important; /* Center thumbnails */
-          max-width: 100% !important;
-        }
-
-        div.thumbnails {
-          margin: 0 !important;
-          text-align: center !important;
-        }
-
-        div.thumbnail {
-          display: inline-block;
-          margin: 5px !important;
-        }
-
-        @media (max-width: 768px) {
-          #thumbnailContainer {
-            padding: 0 !important;
-          }
-        }
-
-
-      `;
-      iframeDoc.head.appendChild(style);
-    });
   </script>
 
   <footer class="text-center">
