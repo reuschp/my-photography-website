@@ -1,117 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pascal Reusch Photography</title>
-  <link rel="stylesheet" href="css/bootstrap-4.4.1.css">
-    <style>
-      /* Responsive container for the gallery */
-      .gallery-container {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* Default 16:9 aspect ratio */
-        overflow: hidden;
-        background-color: lightblue; /* Debugging */
-      }
-      .gallery-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      /* Adjust aspect ratio for portrait mode */
-      @media (orientation: portrait) {
-        .gallery-container {
-          padding-top: 170%; 
-          background-color: lightgreen; /* Debugging for portrait mode */
-        }
-      }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="portraits.html">Portraits LR Grid </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="portraits-manual.html">Portraits Manual </a>
-          </li>
-		  <li class="nav-item active">
-            <a class="nav-link" href="street.html">Street LR Grid <span class="sr-only">(current)</span></a>
-          </li>
-		  <li class="nav-item">
-            <a class="nav-link" href="street-track.html">Street LR Track </a>	          
-		  </li>
-		  <li class="nav-item">
-            <a class="nav-link" href="street-square.html">Street LR Square </a>
-          </li>
-		  <li class="nav-item">
-            <a class="nav-link" href="street-manual.html">Street Manual </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
-  <section>
-    <div class="jumbotron text-center mt-2 py-2">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pascal Reusch Photography</title>
+        <!-- Include Bootstrap -->
+        <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    </head>
+    <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portraits-manual.html">Portraits</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="street.html">Street<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+        <div class="jumbotron text-center mt-2 py-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Street Photography</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section><div class="container"><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC04165.jpg" alt="">
+            <h5>Cruising through destruction (Egypt)</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC04404.jpg" alt="">
+            <h5>Open door policy (Egypt)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC03031.jpg" alt="">
+            <h5>Coffee break (London, UK)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/IMG_0403.jpg" alt="">
+            <h5>Lock em up (Egypt)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/IMG_0936-2.jpg" alt="">
+            <h5>Coffee (Egypt)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC05868.jpg" alt="">
+            <h5>Walking the highway (Egypt)</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC06845.jpg" alt="">
+            <h5>A lonely guy at a diner (Palo Alto, CA)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09218.jpg" alt="">
+            <h5>Different angles (San Francisco, CA)</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09503.jpg" alt="">
+            <h5>Big and bigger (San Francisco, CA)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09987.jpg" alt="">
+            <h5></h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00055.jpg" alt="">
+            <h5>Catch and call (Florida Keys)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00145.jpg" alt="">
+            <h5>The afterparty  (Florida Keys)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00094.jpg" alt="">
+            <h5>Burning bridges (Florida Keys)</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC05142.jpg" alt="">
+            <h5>Potatoes (Crete, GR)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC05567.jpg" alt="">
+            <h5>Nature parking (Crete, GR)</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01004.jpg" alt="">
+            <h5>Resist and bite (Marco Island, FL)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00246.jpg" alt="">
+            <h5>Waiting (Marco Island, FL)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC05182.jpg" alt="">
+            <h5>(Crete, GR)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC08975.jpg" alt="">
+            <h5>Conversations</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC02400.jpg" alt="">
+            <h5>After the storm (Marco Island, FL)</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC02476.jpg" alt="">
+            <h5>Want to fly (Marco Island, FL)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09854.jpg" alt="">
+            <h5>Grace (Napels, FL)</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/IMG_E5700.jpg" alt="">
+            <h5>Takeoff (Marco Island, FL)</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09184.jpg" alt="">
+            <h5>The surf (Naples, FL)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09259.jpg" alt="">
+            <h5>Naples pier (Naples, FL)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00680.jpg" alt="">
+            <h5>Hanging in Amsterdam</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00848.jpg" alt="">
+            <h5>Rushing home (Amsterdam, NL)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00876.jpg" alt="">
+            <h5>A throne without a party (Amsterdam, NL)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01208.jpg" alt="">
+            <h5></h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01640.jpg" alt="">
+            <h5>Zeche Zollverein (Duisburg, Germany)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC04170.jpg" alt="">
+            <h5>Do not tell anyone (Düsseldorf, D)</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/IMG_1815.jpg" alt="">
+            <h5>A Chinese lady rushing through the rain, Lingshui, CN</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09992.jpg" alt="">
+            <h5></h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00202.jpg" alt="">
+            <h5>The traveler, Essen Hbf, D</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC09015.jpg" alt="">
+            <h5>Going to build something, Lingshui, CN</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC00056.jpg" alt="">
+            <h5>Blurry reflections</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01310.jpg" alt="">
+            <h5>Artists at work</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01346.jpg" alt="">
+            <h5>Walking</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01403.jpg" alt="">
+            <h5>Pillars</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01432.jpg" alt="">
+            <h5>The red dot</h5>
+        </div></div><div class="row mt-3"><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01737.jpg" alt="">
+            <h5>Check out that ballerina!</h5>
+        </div><div class="col-md-6 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC02695.jpg" alt="">
+            <h5>Bridges and those who do not need them, Düsseldorf, D</h5>
+        </div></div><div class="row mt-3"><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC01754.jpg" alt="">
+            <h5>Have a piece</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC02466.jpg" alt="">
+            <h5>Bridges and those who do not need them, Düsseldorf, D</h5>
+        </div><div class="col-md-4 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC02728.jpg" alt="">
+            <h5>Just hanging</h5>
+        </div></div><div class="row mt-3"><div class="col-md-12 col-12 text-center">
+            <img class="img-fluid" src="LR_Export_Street/images/large/DSC02752.jpg" alt="">
+            <h5>Prisoners?</h5>
+        </div></div></div></section>
+    <hr>
+    <section>
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h1>Street Photography - LR Grid embedded</h1>
+          <div class="col-12 text-center">
+            <h4>“To me, photography is an art of observation. It’s about finding something interesting in an ordinary place…I’ve found it has little to do with the things you see and everything to do with the way you see them.”</h4>
+			  <h4>Elliott Erwitt</h4>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-    <section class="container-fluid p-0">
-      <div class="text-center mb-3">
-        <button id="fullscreen-btn" class="btn btn-dark">View Fullscreen</button>
-      </div>
-      <div class="gallery-container">
-        <iframe id="gallery-frame" src="street/index.html" frameborder="0"></iframe>
-      </div>
     </section>
-
-  <script>
-    // Fullscreen logic
-    document.getElementById("fullscreen-btn").addEventListener("click", function () {
-      const iframe = document.getElementById("gallery-frame");
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.webkitRequestFullscreen) { // Safari
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) { // IE
-        iframe.msRequestFullscreen();
-      } else {
-        alert("Fullscreen mode is not supported in this browser.");
-      }
-    });
- </script>
-
-  <footer class="text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <p>Copyright © Pascal Reusch. All rights reserved.</p>
+    
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>Copyright © Pascal Reusch Photography. All rights reserved.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap-4.4.1.js"></script>
-</body>
-</html>
+    </footer>
+    <!-- Include Bootstrap JavaScript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+    </body>
+    </html>
+    
