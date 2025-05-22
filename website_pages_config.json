@@ -1,0 +1,51 @@
+{
+    "pages": [
+        {
+            "lightroom_folder": "LR_Export_Street",
+            "output_html_file": "street.html",
+            "jumbotron": {
+                "header": "Street Photography"
+            },
+            "navbar_entry": {
+                "title": "Street",
+                "link": "street.html"
+            },
+            "quote": {
+                "text": "\u201cTo me, photography is an art of observation. It\u2019s about finding something interesting in an ordinary place\u2026I\u2019ve found it has little to do with the things you see and everything to do with the way you see them.\u201d",
+                "author": "Elliott Erwitt"
+            }
+        },
+        {
+            "lightroom_folder": "path/to/lightroom_folder",
+            "output_html_file": "output_file_name.html",
+            "jumbotron": {
+                "header": "Page Header Text",
+                "subheader": "Optional Subheader Text"
+            },
+            "navbar_entry": {
+                "title": "Page Title for Navbar",
+                "link": "output_file_name.html"
+            },
+            "quote": {
+                "text": "Inspiring quote for the page",
+                "author": "Quote Author"
+            }
+        },
+        {
+            "lightroom_folder": "path/to/another_lightroom_folder",
+            "output_html_file": "another_output_file_name.html",
+            "jumbotron": {
+                "header": "Another Page Header Text",
+                "subheader": "Another Optional Subheader Text"
+            },
+            "navbar_entry": {
+                "title": "Another Page Title for Navbar",
+                "link": "another_output_file_name.html"
+            },
+            "quote": {
+                "text": "Another inspiring quote for the page",
+                "author": "Another Quote Author"
+            }
+        }
+    ]
+}
